@@ -11,7 +11,7 @@ def train(model=None, learningRate=0.001, nEpoch=50, pathToData='./PokemonData',
 	preprocessData = tv.transforms.Compose(
 	    [tv.transforms.Lambda(lambda image: image.convert('RGB')),
 	     tv.transforms.Lambda(pad_to_square),
-	     tv.transforms.Resize((256, 256)),
+	     tv.transforms.Resize((128, 128)),
 	     tv.transforms.ToTensor()]
 	    )
 	dataTrain = tv.datasets.ImageFolder(root=pathToData, transform=preprocessData)
